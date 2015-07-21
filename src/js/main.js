@@ -3,18 +3,19 @@ angular
 	.config(function($routeProvider){
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/search.html',
-				controller: 'MainCtrl'
+				templateUrl: 'views/home.html',
+				controller: 'MovieCtrl'
 			})
 	})
-	.controller('MainCtrl', function(Movie, $scope){
+	.controller('NavCtrl', function() {})
+	.controller('MovieCtrl', function(Movie, $scope){
 		Movie.getPopular(function(res){
 			$scope.movies = res.results;
 		})
 		Movie.getConfig(function(data){
 			$scope.config = {
 				base_url: data.images.base_url,
-				poster_size: data.images.poster_sizes[0]
+				poster_size: data.images.poster_sizes[3]
 			}
 		console.log($scope.config)
 		})

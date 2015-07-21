@@ -8,9 +8,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="lib/build.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	</head>
 	<body>
-		<div ng-include="src='views/search.html'" ng-controller="MainCtrl"></div>
+		<div ng-include="src='views/nav.html'" ng-controller="NavCtrl"></div>
+		<div ng-view="" ng-controller="MovieCtrl"></div>
 		<script src="lib/build.js"></script>
 		<script src="js/main.js"></script>
 	</body>
