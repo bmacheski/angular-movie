@@ -1,0 +1,25 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Angular Movie</span>
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content"></div>
+  </main>
+</div>
+
+<div class="mdl-layout__content">
+  <div class="mdl-grid">
+    <div class="mdl-card md-cell mdl-cell--3-col movie-card" ng-repeat="(key,movie) in movies">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">{{movie.title}}</h2>
+      </div>
+      <div class="mdl-card__media">
+        <img ng-src="{{config.base_url + config.poster_size + movie.poster_path}}" width="173" height="157" border="0"
+       alt="" style="padding:10px;">
+      </div>
+    </div>
+  </div>
+</div>

@@ -66,7 +66,6 @@ module.exports = function(grunt) {
             cwd: 'src/',
             src: [
               '**',
-              '!**/*.jade',
               '!**/*.scss',
               '!**/*.js'
             ],
@@ -81,33 +80,6 @@ module.exports = function(grunt) {
         files: {
           'public/lib/build.css': 'public/lib/build.css'
         }
-      }
-    },
-    jade: {
-      dev: {
-        options: {
-          pretty: true
-        },
-        files: [
-          {
-            expand: true,
-            cwd: 'src/',
-            src: ['**/*.jade', '!**/_*.jade'],
-            dest: 'public/',
-            ext: '.html'
-          }
-        ]
-      },
-      prod: {
-        files: [
-          {
-            expand: true,
-            cwd: 'src/',
-            src: ['**/*.jade', '!**/_*.jade'],
-            dest: 'public/',
-            ext: '.html'
-          }
-        ]
       }
     },
     sass: {
@@ -158,10 +130,6 @@ module.exports = function(grunt) {
           'public/**/*.html'
         ]
       },
-      jade: {
-        files: ['src/**/*.jade'],
-        tasks: ['jade:dev']
-      },
       sass: {
         files: ['src/**/*.scss'],
         tasks: ['sass:dev', 'autoprefixer']
@@ -169,8 +137,11 @@ module.exports = function(grunt) {
       js: {
         files: ['src/js/**/*.js'],
         tasks: ['babel:dev']
+      },
+      html: {
+        files: ['src/**/*.html'],
+        tasks: ['copy:main']
       }
-
     }
   });
 
@@ -180,7 +151,6 @@ module.exports = function(grunt) {
     'copy',
     'babel:prod',
     'bower_concat',
-    'jade:prod',
     'sass:prod',
     'autoprefixer',
     'uglify',
@@ -191,7 +161,6 @@ module.exports = function(grunt) {
     'copy',
     'babel:dev',
     'bower_concat',
-    'jade:dev',
     'sass:dev',
     'autoprefixer'
   ]);
