@@ -1,5 +1,5 @@
 angular
-	.module('angularMovie', ['ngRoute'])
+	.module('angularMovie', ['ngRoute', 'ngMaterial'])
 	.config(function($routeProvider){
 		$routeProvider
 			.when('/', {
@@ -8,6 +8,7 @@ angular
 			})
 	})
 	.controller('NavCtrl', function() {})
+
 	.controller('MovieCtrl', function(Movie, $scope){
 		Movie.getPopular(function(res){
 			$scope.movies = res.results;
@@ -20,6 +21,7 @@ angular
 		console.log($scope.config)
 		})
 	})
+
 	.factory('Movie', function($http) {
 		return {
 			getPopular(cb) {

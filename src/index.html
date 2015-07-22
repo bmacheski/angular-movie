@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="lib/build.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	</head>
-	<body>
+	<body layout="column" flex>
 		<div ng-include="src='views/nav.html'" ng-controller="NavCtrl"></div>
 		<div ng-view="" ng-controller="MovieCtrl"></div>
 		<script src="lib/build.js"></script>

@@ -65,7 +65,8 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/',
             src: [
-              '**',
+              '*.html',
+              'views/{,*/}*.html',
               '!**/*.scss',
               '!**/*.js'
             ],

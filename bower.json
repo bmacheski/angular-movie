@@ -17,6 +17,6 @@
   "dependencies": {
     "angular": "~1.4.0",
     "angular-route": "~1.4.3",
-    "material-design-lite": "~1.0.0"
+    "angular-material": "~0.10.0"
   }
 }

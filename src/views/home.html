@@ -1,8 +1,8 @@
-<div class="mdl-layout__content">
-  <div class="mdl-grid">
-    <div class="mdl-card md-cell mdl-cell--3-col movie-card" ng-repeat="(key,movie) in movies">
+<div layout-fill>
+  <div layout="row" layout-wrap class="home-container">
+    <div class="movie-card" ng-repeat="(key,movie) in movies" flex="20">
       <div>
-        <img ng-src="{{config.base_url + config.poster_size + movie.poster_path}}" width="290" height="310" border="0"
+        <img ng-src="{{config.base_url + config.poster_size + movie.poster_path}}" width="245" height="280" border="0"
        alt="" style="padding:10px;">
       </div>
     </div>
