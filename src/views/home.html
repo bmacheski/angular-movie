@@ -1,10 +1,8 @@
 <div layout-fill>
   <div layout="row" layout-wrap class="home-container">
     <div class="movie-card" ng-repeat="(key,movie) in movies" flex="20">
-      <div>
-        <img ng-src="{{config.base_url + config.poster_size + movie.poster_path}}" width="245" height="280" border="0"
+      <img ng-src="{{config.base_url + config.poster_size + movie.poster_path}}" width="245" height="280" border="0"
        alt="" style="padding:10px;">
-      </div>
     </div>
   </div>
 </div>

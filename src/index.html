@@ -11,9 +11,13 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	</head>
 	<body layout="column" flex>
-		<div ng-include="src='views/nav.html'" ng-controller="NavCtrl"></div>
+		<div ng-include="src='views/nav.html'" ng-controller="NavCtrl as nav"></div>
 		<div ng-view="" ng-controller="MovieCtrl"></div>
 		<script src="lib/build.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/main.constants.js"></script>
+		<script src="js/movie.controller.js"></script>
+		<script src="js/nav.controller.js"></script>
+		<script src="js/movie.factory.js"></script>
 	</body>
 </html>
