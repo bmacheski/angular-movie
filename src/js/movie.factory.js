@@ -8,12 +8,12 @@ angular
     return {
       getPopular(cb) {
         $http
-          .get(API_URL + '/movie/popular?api_key=' + KEY)
+          .get(API_URL + `/movie/popular?api_key=${KEY}`)
           .success(cb)
       },
       getConfig(cb) {
         $http
-          .get(API_URL + '/configuration?api_key=' + KEY, {cache: true})
+          .get(API_URL + `/configuration?api_key=${KEY}`, {cache: true})
           .success(cb)
       }
     }
