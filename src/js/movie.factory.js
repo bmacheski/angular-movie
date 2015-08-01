@@ -4,17 +4,22 @@ angular
   .module('angularMovie')
   .factory('Movie', Movie);
 
-  function Movie($http, API_URL, KEY) {
+  function Movie($http, $q, API_URL, KEY) {
+    var data = [],
+        promise;
     return {
-      getPopular(cb) {
-        $http
-          .get(API_URL + `/movie/popular?api_key=${KEY}`)
-          .success(cb)
-      },
-      getConfig(cb) {
-        $http
-          .get(API_URL + `/configuration?api_key=${KEY}`, {cache: true})
-          .success(cb)
+      getPopular() {
+        if(!promise) {
+          promise = $http
+            .get(API_URL + `/movie/popular?api_key=${KEY}`)
+            .then((res) => {
+              data = res.data;
+              return data;
+            }, (res) => {
+              return $q.reject(res);
+              })
+        }
+        return promise;
       }
     }
   }
