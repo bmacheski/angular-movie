@@ -1,8 +1,8 @@
-'use strict';
-
 /**
- * Gets configuration data required for movie posters
+ * Gets configuration data required for movie posters & banners
  */
+
+'use strict';
 
 angular
   .module('angularMovie')

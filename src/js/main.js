@@ -11,4 +11,9 @@ angular
 				controller: 'MovieCtrl',
 				controllerAs: 'movie'
 			})
+			.when('/movie/:movieId', {
+				templateUrl: 'views/movieinfo.html',
+				controller: 'MovieInfoCtrl',
+				controllerAs: 'info'
+			})
 	}

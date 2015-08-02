@@ -2,8 +2,10 @@
   <h2 class="trending-title">Trending Movies</h2>
   <div layout="row" layout-wrap class="home-container">
     <div class="movie-card" ng-repeat="(key,movie) in movies" flex="20">
-      <img ng-src="{{config.base_url + config.poster_size + movie.poster_path}}" width="230" height="260" border="0"
-       alt="" style="padding:10px;">
+      <a ng-href="#/movie/{{movie.id}}">
+        <img ng-src="{{config.base_url + config.poster_size + movie.poster_path}}" width="230" height="260" border="0"
+         alt="" style="padding:10px;">
+      </a>
     </div>
   </div>
 </div>
