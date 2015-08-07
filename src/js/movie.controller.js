@@ -6,7 +6,8 @@ angular
 
   function MovieCtrl(Movie, MovieConfig, $scope) {
     MovieConfig
-      .getConfig((data) => {
+      .getConfig()
+      .then((data) => {
         $scope.config = {
           base_url: data.images.base_url,
           poster_size: data.images.poster_sizes[3]

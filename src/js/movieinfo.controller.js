@@ -6,7 +6,8 @@ angular
 
   function MovieInfoCtrl(MovieConfig, Movie, $routeParams, $scope) {
     MovieConfig
-      .getConfig((data) => {
+      .getConfig()
+      .then((data) => {
         $scope.config = {
           base_url: data.images.base_url,
           backdrop_size: data.images.backdrop_sizes[2]
