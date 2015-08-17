@@ -24,3 +24,35 @@ div.mdl-grid {
   margin-left: auto;
   margin-right: auto;
 }
+
+nav-search {
+  position: relative;
+  left: 850px;
+  bottom: 45px;
+  width: 400px;
+}
+
+.navsearch-input {
+   width: 350px;
+}
+
+.nav-title {
+  display: inline;
+  margin-left: 10px;
+}
+
+.ac-list {
+  border: 1px solid #888;
+  width: 350px;
+  margin-top: 0;
+  margin-left: 30px;
+  padding-left: 0;
+}
+
+.ac-list li {
+  background-color: #fff;
+  color: #888;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}

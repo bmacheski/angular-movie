@@ -11,15 +11,18 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	</head>
 	<body layout="column" flex>
-		<div ng-include="src='views/nav.html'" ng-controller="NavCtrl as nav"></div>
+		<md-toolbar>
+			<p class="nav-title">ngMovie</p>
+			<nav-search></nav-search>
+		</md-toolbar>
 		<div ng-view="" ng-controller="MovieCtrl"></div>
 		<script src="lib/build.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/main.constants.js"></script>
 		<script src="js/movie.controller.js"></script>
 		<script src="js/movieinfo.controller.js"></script>
-		<script src="js/nav.controller.js"></script>
 		<script src="js/movieconfig.factory.js"></script>
 		<script src="js/movie.factory.js"></script>
+		<script src="js/search.directive.js"></script>
 	</body>
 </html>
