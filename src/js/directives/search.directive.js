@@ -14,7 +14,7 @@ angular
           var url = API_URL + `/search/movie?api_key=${KEY}&query=`;
           $http
             .get(url + scope.searchText)
-            .success(function(res) {
+            .success((res) => {
               scope.searchresults = res.results;
             })
         }

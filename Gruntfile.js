@@ -89,7 +89,7 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'public/css/main.css': 'src/_styles/main.scss'
+          'public/css/main.css': 'src/styles/main.scss'
         }
       },
       dev: {
@@ -98,7 +98,7 @@ module.exports = function(grunt) {
           sourceMapEmbed: true
         },
         files: {
-          'public/css/main.css': 'src/_styles/main.scss'
+          'public/css/main.css': 'src/styles/main.scss'
         }
       }
     },
