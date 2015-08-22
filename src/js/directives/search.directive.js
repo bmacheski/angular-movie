@@ -4,20 +4,31 @@ angular
   .module('angularMovie')
   .directive('navSearch', navSearch);
 
-  function navSearch($http, API_URL, KEY) {
+  function navSearch($http, API_URL, KEY, Movie) {
     return {
       restrict: 'E',
       templateUrl: 'views/navsearch.html',
       link: function(scope, elem, attrs) {
         scope.searchresults;
+        scope.opened = false;
         scope.search = function() {
-          var url = API_URL + `/search/movie?api_key=${KEY}&query=`;
-          $http
-            .get(url + scope.searchText)
-            .success((res) => {
-              scope.searchresults = res.results;
+          scope.opened = true;
+          Movie
+            .performSearch(scope.searchText)
+            .then((res) => {
+              scope.searchresults = res.data.results;
             })
         }
+        // toggles opening and closing of search dropdown
+        scope.toggleItems = function() {
+          scope.opened = !scope.opened;
+        }
+        window.onclick = function() {
+          scope.$apply();
+          if (scope.opened) {
+            scope.opened = !scope.opened;
+          }
+        };
       }
     }
   }
