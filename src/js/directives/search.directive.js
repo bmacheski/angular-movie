@@ -4,7 +4,7 @@ angular
   .module('angularMovie')
   .directive('navSearch', navSearch);
 
-  function navSearch($http, API_URL, KEY, Movie) {
+  function navSearch($http, API_URL, KEY, Movie, $location) {
     return {
       restrict: 'E',
       templateUrl: 'views/navsearch.html',

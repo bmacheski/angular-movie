@@ -16,4 +16,9 @@ angular
         controller: 'MovieInfoCtrl',
         controllerAs: 'info'
       })
+      .when('/movie/search/:searchId', {
+        templateUrl: 'views/movieinfo.html',
+        controller: 'SearchInfoCtrl',
+        controllerAs: 'search'
+      })
   }
