@@ -1,31 +1,31 @@
 <!doctype html>
 <html ng-app="angularMovie">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Angular Movie</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="lib/build.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	</head>
-	<body layout="column" flex>
-		<md-toolbar>
-			<p>
-				<a class="nav-title" ng-href="#/">ngMovie</a>
-			</p>
-			<nav-search></nav-search>
-		</md-toolbar>
-		<div ng-view="" ng-controller="MovieCtrl"></div>
-		<script src="lib/build.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/main.constants.js"></script>
-		<script src="js/controllers/movie.controller.js"></script>
-		<script src="js/controllers/movieinfo.controller.js"></script>
-		<script src="js/controllers/searchinfo.controller.js"></script>
-		<script src="js/directives/search.directive.js"></script>
-		<script src="js/factories/movieconfig.factory.js"></script>
-		<script src="js/factories/movie.factory.js"></script>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Angular Movie</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="lib/build.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body layout="column" flex>
+    <md-toolbar>
+      <p>
+        <a class="nav-title" ng-href="#/">ngMovie</a>
+      </p>
+      <nav-search></nav-search>
+    </md-toolbar>
+    <div ng-view="" ng-controller="MovieCtrl"></div>
+    <script src="lib/build.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/main.constants.js"></script>
+    <script src="js/controllers/movie.controller.js"></script>
+    <script src="js/controllers/movieinfo.controller.js"></script>
+    <script src="js/controllers/searchinfo.controller.js"></script>
+    <script src="js/directives/search.directive.js"></script>
+    <script src="js/factories/movieconfig.factory.js"></script>
+    <script src="js/factories/movie.factory.js"></script>
+  </body>
 </html>
