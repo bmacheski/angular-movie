@@ -7,3 +7,7 @@ Movie information browser application built with AngularJS and using the tMDB AP
     npm install
     bower install
     grunt serve
+
+### License
+
+MIT
