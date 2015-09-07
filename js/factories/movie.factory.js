@@ -1,1 +1,26 @@
-"use strict";function Movie(a,b,c,d){var e,f={};return f.getPopular=function(){return e?b.when(e):a.get(c+("/movie/popular?api_key="+d)).then(function(a){return e=a.data})},f.performSearch=function(e){var f,g=c+("/search/movie?api_key="+d+"&query=");return f?b.when(f):a.get(g+e).success(function(a){return f=a.results})},f}angular.module("angularMovie").factory("Movie",Movie);
+'use strict';
+
+angular.module('angularMovie').factory('Movie', Movie);
+
+function Movie($http, $q, API_URL, KEY) {
+  var obj = {};
+  var data;
+
+  // gets trending movies whether or not API call has been performed
+  obj.getPopular = function () {
+    return data ? $q.when(data) : $http.get(API_URL + ('/movie/popular?api_key=' + KEY)).then(function (res) {
+      data = res.data;
+      return data;
+    });
+  };
+
+  obj.performSearch = function (text) {
+    var search;
+    var url = API_URL + ('/search/movie?api_key=' + KEY + '&query=');
+    return search ? $q.when(search) : $http.get(url + text).success(function (res) {
+      search = res.results;
+      return search;
+    });
+  };
+  return obj;
+}

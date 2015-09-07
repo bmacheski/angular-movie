@@ -1,1 +1,16 @@
-"use strict";function MovieCtrl(a,b,c){b.getConfig().then(function(a){c.config={base_url:a.images.base_url,poster_size:a.images.poster_sizes[3]}}),a.getPopular().then(function(a){c.movies=a.results})}angular.module("angularMovie").controller("MovieCtrl",MovieCtrl);
+'use strict';
+
+angular.module('angularMovie').controller('MovieCtrl', MovieCtrl);
+
+function MovieCtrl(Movie, MovieConfig, $scope) {
+  MovieConfig.getConfig().then(function (data) {
+    $scope.config = {
+      base_url: data.images.base_url,
+      poster_size: data.images.poster_sizes[3]
+    };
+  });
+
+  Movie.getPopular().then(function (response) {
+    $scope.movies = response.results;
+  });
+}

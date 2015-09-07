@@ -1,1 +1,20 @@
-"use strict";function MovieConfig(a,b,c,d){var e,f={};return f.getConfig=function(){return e?b.when(e):a.get(c+("/configuration?api_key="+d)).then(function(a){return e=a.data})},f}angular.module("angularMovie").factory("MovieConfig",MovieConfig);
+/**
+ * Gets configuration data required for movie posters & banners
+ */
+
+'use strict';
+
+angular.module('angularMovie').factory('MovieConfig', MovieConfig);
+
+function MovieConfig($http, $q, API_URL, KEY) {
+  var config;
+  var confobj = {};
+
+  confobj.getConfig = function () {
+    return config ? $q.when(config) : $http.get(API_URL + ('/configuration?api_key=' + KEY)).then(function (res) {
+      config = res.data;
+      return config;
+    });
+  };
+  return confobj;
+}

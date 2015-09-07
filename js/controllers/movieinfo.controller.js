@@ -1,1 +1,22 @@
-"use strict";function MovieInfoCtrl(a,b,c,d){a.getConfig().then(function(a){d.config={base_url:a.images.base_url,backdrop_size:a.images.backdrop_sizes[2]}}),b.getPopular().then(function(a,b){for(var e=a.results,b=c.movieId,f=0;f<e.length;f++)e[f].id==b&&(d.foundMovie=e[f])})}angular.module("angularMovie").controller("MovieInfoCtrl",MovieInfoCtrl);
+'use strict';
+
+angular.module('angularMovie').controller('MovieInfoCtrl', MovieInfoCtrl);
+
+function MovieInfoCtrl(MovieConfig, Movie, $routeParams, $scope) {
+  MovieConfig.getConfig().then(function (data) {
+    $scope.config = {
+      base_url: data.images.base_url,
+      backdrop_size: data.images.backdrop_sizes[2]
+    };
+  });
+
+  Movie.getPopular().then(function (response, movieId) {
+    var data = response.results;
+    var movieId = $routeParams.movieId;
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].id == movieId) {
+        $scope.foundMovie = data[i];
+      }
+    }
+  });
+}
