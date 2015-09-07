@@ -1,0 +1,1 @@
+"use strict";function MovieConfig(a,b,c,d){var e,f={};return f.getConfig=function(){return e?b.when(e):a.get(c+("/configuration?api_key="+d)).then(function(a){return e=a.data})},f}angular.module("angularMovie").factory("MovieConfig",MovieConfig);

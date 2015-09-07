@@ -1,0 +1,8 @@
+<i class="material-icons search-i">search</i>
+<input class="navsearch-input" type="text" placeholder="Search for a movie" ng-model="searchText" ng-model-options="{ debounce: 500 }" ng-change="search()" ng-click="toggleItems()"></input>
+<ul class="ac-list" ng-show="opened">
+  <li ng-repeat="result in searchresults">
+    <a ng-href="#/movie/search/{{result.id}}">{{result.title}}</a>
+  </li>
+</ul>
+

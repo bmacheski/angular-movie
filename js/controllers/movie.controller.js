@@ -1,0 +1,1 @@
+"use strict";function MovieCtrl(a,b,c){b.getConfig().then(function(a){c.config={base_url:a.images.base_url,poster_size:a.images.poster_sizes[3]}}),a.getPopular().then(function(a){c.movies=a.results})}angular.module("angularMovie").controller("MovieCtrl",MovieCtrl);

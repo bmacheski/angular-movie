@@ -1,0 +1,1 @@
+"use strict";function SearchInfoCtrl(a,b,c,d,e){for(var f=e.searchresults,g=c.searchId,h=0;h<f.length;h++)f[h].id==g&&(d.foundMovie=f[h]);a.getConfig().then(function(a){d.config={base_url:a.images.base_url,backdrop_size:a.images.backdrop_sizes[2]}})}angular.module("angularMovie").controller("SearchInfoCtrl",SearchInfoCtrl);

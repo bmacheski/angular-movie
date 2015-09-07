@@ -1,0 +1,1 @@
+"use strict";function MovieInfoCtrl(a,b,c,d){a.getConfig().then(function(a){d.config={base_url:a.images.base_url,backdrop_size:a.images.backdrop_sizes[2]}}),b.getPopular().then(function(a,b){for(var e=a.results,b=c.movieId,f=0;f<e.length;f++)e[f].id==b&&(d.foundMovie=e[f])})}angular.module("angularMovie").controller("MovieInfoCtrl",MovieInfoCtrl);
