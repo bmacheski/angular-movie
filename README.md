@@ -10,6 +10,7 @@ Movie information browser application built with AngularJS and using the tMDB AP
 
 
 ### Demo
+
 Click [here](http://bmacheski.com/angular-movie/) to see the live version.
 
 ### License
