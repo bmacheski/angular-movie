@@ -11,23 +11,21 @@ angular
       link: function(scope, elem, attrs) {
         scope.searchresults;
         scope.opened = false;
+
         scope.search = function() {
-          scope.opened = true;
-          Movie
-            .performSearch(scope.searchText)
-            .then((res) => {
-              scope.searchresults = res.data.results;
-            })
+          if(scope.searchText) {
+            scope.opened = true;
+            Movie
+              .performSearch(scope.searchText)
+              .then((res) => {
+                scope.searchresults = res.data.results;
+              })
+          }
         }
-        // toggles opening and closing of search dropdown
-        scope.toggleItems = function() {
-          scope.opened = !scope.opened;
-        }
+
         window.onclick = function() {
           scope.$apply();
-          if (scope.opened) {
-            scope.opened = !scope.opened;
-          }
+          scope.opened = false;
         };
       }
     }
